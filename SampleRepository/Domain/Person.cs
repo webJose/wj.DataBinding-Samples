@@ -22,6 +22,20 @@ namespace SampleRepository.Domain
             get { return m_lastName; }
             set { SaveAndNotify(ref m_lastName, value); }
         }
+
+        private DateTime? m_birthDate;
+        public DateTime? BirthDate
+        {
+            get { return m_birthDate; }
+            set { SaveAndNotify(ref m_birthDate, value); }
+        }
+
+        private string m_country;
+        public string Country
+        {
+            get { return m_country; }
+            set { SaveAndNotify(ref m_country, value); }
+        }
         #endregion
     }
 }

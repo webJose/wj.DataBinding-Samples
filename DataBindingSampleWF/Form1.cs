@@ -15,7 +15,7 @@ namespace DataBindingSampleWF
     public partial class Form1 : Form
     {
         #region Properties
-        private BindingList<Selectables.Person> SelectablePersons { get; set; }
+        private BindingList<Shared.Selectables.Person> SelectablePersons { get; set; }
         private BindingList<Person> SelectedPersons { get; set; }
         #endregion
 
@@ -27,26 +27,27 @@ namespace DataBindingSampleWF
         #endregion
 
         #region Methods
-        private BindingList<Selectables.Person> BuildPersonBindingList(IList<Person> persons)
+        private BindingList<Shared.Selectables.Person> BuildPersonBindingList(IList<Person> persons)
         {
-            return new BindingList<Selectables.Person>(persons.Select(p => new Selectables.Person(p)).ToList());
+            return new BindingList<Shared.Selectables.Person>(persons.Select(p => new Shared.Selectables.Person(p)).ToList());
         }
         #endregion
 
         #region Event Handlers
         private void Form1_Load(object sender, EventArgs e)
         {
-            SelectablePersons = BuildPersonBindingList(PersonRepository.GetAll());
+            SelectablePersons = BuildPersonBindingList(PersonRepository.GetAll(20));
             dgv1.AutoGenerateColumns = false;
             dgv1.DataSource = SelectablePersons;
             SelectedPersons = new BindingList<Person>();
+            dgv2.AutoGenerateColumns = false;
             dgv2.DataSource = SelectedPersons;
         }
 
         private void btnMoveToOtherDGV_Click(object sender, EventArgs e)
         {
-            List<Selectables.Person> selectedPersons = new List<Selectables.Person>();
-            foreach(Selectables.Person p in SelectablePersons)
+            List<Shared.Selectables.Person> selectedPersons = new List<Shared.Selectables.Person>();
+            foreach (Shared.Selectables.Person p in SelectablePersons)
             {
                 if (p.Selected)
                 {
@@ -55,8 +56,7 @@ namespace DataBindingSampleWF
                     SelectedPersons.Add(p);
                 }
             }
-
-            foreach(Selectables.Person p in selectedPersons)
+            foreach (Shared.Selectables.Person p in selectedPersons)
             {
                 SelectablePersons.Remove(p);
             }

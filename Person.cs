@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using wj.DataBinding;
 
-namespace DataBindingSampleWPF.Selectables
+namespace Shared.Selectables
 {
     public class Person : Container<SampleRepository.Domain.Person>
     {

@@ -23,36 +23,10 @@ namespace DataBindingSampleWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region Properties
-        public MainViewModel Model { get; set; }
-        #endregion
-
         #region Constructors
         public MainWindow()
         {
-            Model = new MainViewModel();
             InitializeComponent();
-            DataContext = Model;
-        }
-        #endregion
-
-        #region Event Handlers
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            List<Selectables.Person> selectedPersons = new List<Selectables.Person>();
-            foreach(Selectables.Person p in Model.SelectablePersons)
-            {
-                if (p.Selected)
-                {
-                    selectedPersons.Add(p);
-                    //Implicit cast operator in play here.
-                    Model.SelectedPersons.Add(p);
-                }
-            }
-            foreach(Selectables.Person p in selectedPersons)
-            {
-                Model.SelectablePersons.Remove(p);
-            }
         }
         #endregion
     }

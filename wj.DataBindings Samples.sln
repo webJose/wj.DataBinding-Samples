@@ -1,13 +1,20 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBindingSampleWF", "DataBindingSampleWF\DataBindingSampleWF.csproj", "{E3EAD3CF-EEE8-4FAF-A0D3-CA443D690007}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataBindingSampleWPF", "DataBindingSampleWPF\DataBindingSampleWPF.csproj", "{84C6A18C-0937-4327-BBD9-9D5C7D998D69}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleRepository", "SampleRepository\SampleRepository.csproj", "{040B5F16-963B-428D-9907-097956C18241}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{7931BA90-D8F7-4285-BAA5-0417175370E9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Selectables", "Selectables", "{EA870ED1-AA2D-4E7E-A0E2-B1BECCCEB25F}"
+	ProjectSection(SolutionItems) = preProject
+		Person.cs = Person.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,5 +37,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA870ED1-AA2D-4E7E-A0E2-B1BECCCEB25F} = {7931BA90-D8F7-4285-BAA5-0417175370E9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CDCE464-9D63-4040-9CF1-D390F546104D}
 	EndGlobalSection
 EndGlobal
